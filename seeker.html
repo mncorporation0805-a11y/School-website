@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seeker Board - Aurora Academy</title>
+  <!-- SEO Tags -->
+  <meta name="description" content="Seeker Board opportunities at Aurora Academy. Discover career paths, leadership projects, and research opportunities.">
+  <link rel="stylesheet" href="index.css">
+  <style>
+    .seeker-hero {
+      position: relative;
+      height: 60vh;
+      min-height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background-image: url('cta_classroom.jpg');
+      background-size: cover;
+      background-position: center;
+      color: #ffffff;
+      text-align: center;
+      clear: both;
+    }
+    
+    .seeker-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(15, 28, 46, 0.7); /* Deep dark overlay for title legibility */
+      z-index: 1;
+    }
+    
+    .seeker-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      padding: 0 2rem;
+    }
+    
+    .seeker-hero-tag {
+      font-family: var(--font-primary);
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      margin-bottom: 1rem;
+      display: block;
+    }
+    
+    .seeker-hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+    
+    .seeker-content-section {
+      background-color: #ffffff;
+      padding: 8rem 0;
+      text-align: center;
+    }
+    
+    .seeker-coming-soon {
+      max-width: 650px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    
+    .seeker-coming-soon h2 {
+      font-family: var(--font-serif);
+      font-size: 2.5rem;
+      color: #0F1C2E;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+    }
+    
+    .seeker-coming-soon p {
+      font-family: var(--font-primary);
+      font-size: 1.1rem;
+      color: rgba(15, 28, 46, 0.7);
+      line-height: 1.7;
+      margin-bottom: 3rem;
+    }
+    
+    .seeker-coming-soon .accent-line {
+      width: 60px;
+      height: 3px;
+      background-color: #0F1C2E;
+      margin: 0 auto 2.5rem auto;
+    }
+    
+    .seeker-back-btn {
+      background: transparent !important;
+      color: #0F1C2E !important;
+      border: 1.5px solid #0F1C2E !important;
+      border-radius: 0px !important;
+      padding: 0.8rem 2.2rem !important;
+      font-family: var(--font-primary);
+      font-size: 0.85rem !important;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.3s ease !important;
+      display: inline-block;
+      text-decoration: none;
+    }
+    
+    .seeker-back-btn:hover {
+      background: #0F1C2E !important;
+      color: #ffffff !important;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header scrolled">
+    <div class="header-container">
+      <div class="header-left">
+        <a href="index.html#about" class="nav-link-item">PHILOSOPHY</a>
+        <a href="index.html#highlights" class="nav-link-item">HIGHLIGHTS</a>
+        <a href="index.html#events" class="nav-link-item">EVENTS</a>
+      </div>
+      
+      <a href="index.html#home" class="nav-brand">
+        <div class="logo-wrap">
+          <img src="Schoollogo.png" alt="Aurora Academy Official Logo" class="logo-img">
+        </div>
+        <span class="nav-title">AURORA ACADEMY</span>
+      </a>
+      
+      <div class="header-right">
+        <a href="seeker.html" class="nav-link-item active">SEEKER BOARD</a>
+        <a href="index.html#home-cta" class="nav-link-item">ADMISSIONS</a>
+        <button class="nav-link-item font-size-toggle" id="fontSizeToggle" aria-label="Toggle Font Size" style="background: none; border: none; cursor: pointer;">A+</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="seeker-hero">
+    <div class="seeker-hero-overlay"></div>
+    <div class="seeker-hero-content">
+      <span class="seeker-hero-tag">Opportunities & Careers</span>
+      <h1 class="seeker-hero-title">Seeker Board</h1>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <main class="seeker-content-section">
+    <div class="seeker-coming-soon">
+      <div class="accent-line"></div>
+      <h2>Coming Soon</h2>
+      <p>We are currently establishing our premium seeker board network featuring global leadership internships, student research grants, administrative career pathways, and academic fellowships. Check back soon for updates.</p>
+      <a href="index.html" class="seeker-back-btn">Return to Homepage</a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid-three">
+        <!-- Left Column: Contact Information -->
+        <div class="footer-col-left">
+          <h4 class="footer-title-left">Contact Info</h4>
+          <ul class="footer-contact-list">
+            <li class="footer-contact-item">
+              <span class="footer-contact-icon">🏫</span>
+              <span><strong>The Academy</strong><br>Plot 12, Knowledge Park, Noida, UP - 201301</span>
+            </li>
+            <li class="footer-contact-item">
+              <span class="footer-contact-icon">📞</span>
+              <span>+91 XXXXX XXXXX</span>
+            </li>
+            <li class="footer-contact-item">
+              <span class="footer-contact-icon">✉️</span>
+              <span>mncorporation0805@gmail.com</span>
+            </li>
+            <li class="footer-contact-item">
+              <span class="footer-contact-icon">🕒</span>
+              <span>Mon - Fri: 8:00 AM - 4:00 PM</span>
+            </li>
+          </ul>
+          <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="footer-map-link">
+            📍 View on Google Maps
+          </a>
+        </div>
+
+        <!-- Center Column: Logo and Socials -->
+        <div class="footer-col-center">
+          <div class="footer-logo-center-wrap">
+            <a href="index.html#home">
+              <img src="Schoollogo.png" alt="The Academy Official Logo" class="footer-logo-img-center">
+            </a>
+            <div class="footer-mn-badge">By MN Corporation</div>
+          </div>
+          <div class="footer-social-icons-row">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer-social-circle" aria-label="Facebook">
+              <svg class="footer-social-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-social-circle" aria-label="Instagram">
+              <svg class="footer-social-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="footer-social-circle" aria-label="LinkedIn">
+              <svg class="footer-social-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="footer-social-circle" aria-label="YouTube">
+              <svg class="footer-social-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Column: Quick Links -->
+        <div class="footer-col-right">
+          <h4 class="footer-title-right">Quick Links</h4>
+          <div class="footer-quick-grid">
+            <a href="index.html#home-cta" class="footer-quick-link-item">Admissions Info</a>
+            <a href="index.html#events" class="footer-quick-link-item">Academic Calendar</a>
+            <a href="#" class="footer-quick-link-item" onclick="alert('Student Portal Login Page Simulated.')">Student Portal</a>
+            <a href="#" class="footer-quick-link-item" onclick="alert('Faculty Directory Page Simulated.')">Faculty Directory</a>
+            <a href="#" class="footer-quick-link-item" onclick="alert('School Policies Document Simulated.')">School Policies</a>
+            <a href="index.html#home-cta" class="footer-quick-link-item">Contact Us</a>
+            <a href="#" class="footer-quick-link-item" onclick="alert('Privacy Policy Page Simulated.')">Privacy Policy</a>
+            <a href="#" class="footer-quick-link-item" onclick="alert('Terms & Conditions Page Simulated.')">Terms & Conditions</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom-new">
+        <div>
+          <p>&copy; 2026 MN Corporation. All Rights Reserved.</p>
+        </div>
+        <div class="footer-bottom-links-row">
+          <a href="#" class="footer-bottom-link-item" onclick="alert('Privacy Policy simulated.')">Privacy Policy</a>
+          <a href="#" class="footer-bottom-link-item" onclick="alert('Terms simulated.')">Terms</a>
+          <a href="#" class="footer-bottom-link-item" onclick="alert('Accessibility simulated.')">Accessibility</a>
+          <a href="#" class="footer-bottom-link-item" onclick="alert('Sitemap simulated.')">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

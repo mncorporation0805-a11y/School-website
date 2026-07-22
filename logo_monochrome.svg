@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 310" width="300" height="310">
+  <!-- Monochrome Logo Version (Solid Deep Navy) -->
+  <style>
+    .mono-stroke { fill: none; stroke: #0A192F; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+    .mono-stroke-thin { fill: none; stroke: #0A192F; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    .mono-fill { fill: #0A192F; }
+    
+    .school-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 21px;
+      font-weight: 700;
+      fill: #0A192F;
+      letter-spacing: 0.16em;
+      text-anchor: middle;
+    }
+    .school-motto {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      font-size: 9px;
+      font-weight: 600;
+      fill: #0A192F;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      text-anchor: middle;
+      opacity: 0.8;
+    }
+    .corp-signature {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      font-size: 6.5px;
+      font-weight: 500;
+      fill: #0A192F;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-anchor: middle;
+      opacity: 0.5;
+    }
+  </style>
+
+  <!-- Emblem Group (Centered at 150, 100) -->
+  <g transform="translate(50, 15)">
+    <!-- Outer Circle -->
+    <circle class="mono-stroke" cx="100" cy="100" r="70" />
+    <!-- Shield -->
+    <path class="mono-stroke" d="M 70,65 L 130,65 C 130,65 130,115 100,145 C 70,115 70,65 70,65 Z" />
+    <!-- Torch Flame -->
+    <path class="mono-fill" d="M 100,70 Q 106,78 110,87 L 104,87 L 104,96 L 96,96 L 96,87 L 90,87 Q 94,78 100,70 Z" />
+    <!-- Torch Handle & Cup -->
+    <path class="mono-stroke-thin" d="M 94,96 L 106,96" />
+    <path class="mono-stroke-thin" d="M 100,96 L 100,122" />
+    <!-- Open Book -->
+    <path class="mono-stroke-thin" d="M 78,130 C 88,124 96,128 100,132 C 104,128 112,124 122,130" />
+    <path class="mono-stroke-thin" d="M 80,134 C 89,129 96,132 100,135 C 104,132 111,129 120,134" />
+  </g>
+
+  <!-- Typography -->
+  <text x="150" y="228" class="school-title">AURORA ACADEMY</text>
+  <text x="150" y="252" class="school-motto">Learning Beyond Tomorrow</text>
+  <text x="150" y="280" class="corp-signature">Designed &amp; Developed by MN Corporation</text>
+</svg>

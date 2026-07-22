@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Icon Logo Version (Pure Symbolic Emblem) -->
+  <style>
+    .gold-stroke { fill: none; stroke: #C5A880; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+    .gold-stroke-thin { fill: none; stroke: #C5A880; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    .gold-fill { fill: #C5A880; }
+  </style>
+  
+  <!-- Outer Gold Circle -->
+  <circle class="gold-stroke" cx="100" cy="100" r="70" />
+  
+  <!-- Shield of Leadership -->
+  <path class="gold-stroke" d="M 70,65 L 130,65 C 130,65 130,115 100,145 C 70,115 70,65 70,65 Z" />
+  
+  <!-- Torch Flame (Arrow Shape pointing Up) -->
+  <path class="gold-fill" d="M 100,70 Q 106,78 110,87 L 104,87 L 104,96 L 96,96 L 96,87 L 90,87 Q 94,78 100,70 Z" />
+  
+  <!-- Torch Handle and Cup -->
+  <path class="gold-stroke-thin" d="M 94,96 L 106,96" />
+  <path class="gold-stroke-thin" d="M 100,96 L 100,122" />
+  
+  <!-- Open Book Curves representing Knowledge & Growth -->
+  <path class="gold-stroke-thin" d="M 78,130 C 88,124 96,128 100,132 C 104,128 112,124 122,130" />
+  <path class="gold-stroke-thin" d="M 80,134 C 89,129 96,132 100,135 C 104,132 111,129 120,134" />
+</svg>
