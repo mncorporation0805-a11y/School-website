@@ -1003,7 +1003,7 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ==========================================
      22. WORD-BY-WORD STAGGERED SCROLL ANIMATIONS
      ========================================== */
-  const leafTextElems = document.querySelectorAll('.section-tag, .section-title, .story-headline, .story-eyebrow, h2.animate-words');
+  const leafTextElems = document.querySelectorAll('.section-tag, .section-title, .story-eyebrow, h2.animate-words:not(.story-headline)');
   
   leafTextElems.forEach((elem) => {
     if (elem.classList.contains('words-processed')) return;
@@ -1057,16 +1057,67 @@ document.addEventListener('DOMContentLoaded', () => {
     word.style.transitionDelay = `${index * 0.15}s`;
   });
 
-  document.querySelectorAll('.section-typography-transition, .section-typography-transition .trans-word, .animate-words, .typography-transition-container, .trans-line, .section-header, .story-content, .highlight-reveal, .highlight-card-anim, .stat-card-anim, .inspiring-left, .inspiring-header-box, .inspiring-video-frame, .animate-img, .reveal').forEach(target => {
+  document.querySelectorAll('.section-typography-transition, .section-typography-transition .trans-word, .animate-words:not(.story-headline), .typography-transition-container, .trans-line, .section-header, .highlight-reveal, .highlight-card-anim, .stat-card-anim, .inspiring-left, .inspiring-header-box, .inspiring-video-frame, .animate-img, .reveal').forEach(target => {
     scrollObserver.observe(target);
   });
 
   // Safety fallback: Force reveal all animation elements if they haven't loaded yet after 1 second
   setTimeout(() => {
-    document.querySelectorAll('.section-typography-transition, .section-typography-transition .trans-word, .animate-words, .typography-transition-container, .trans-line, .section-header, .story-content, .highlight-reveal, .highlight-card-anim, .stat-card-anim, .inspiring-left, .inspiring-header-box, .inspiring-video-frame, .animate-img, .reveal').forEach(target => {
+    document.querySelectorAll('.section-typography-transition, .section-typography-transition .trans-word, .animate-words:not(.story-headline), .typography-transition-container, .trans-line, .section-header, .highlight-reveal, .highlight-card-anim, .stat-card-anim, .inspiring-left, .inspiring-header-box, .inspiring-video-frame, .animate-img, .reveal').forEach(target => {
       target.classList.add('in-view');
     });
   }, 1000);
+
+  /* ==========================================
+     SPECIALIZED WORD-BY-WORD REVEAL FOR STORY SECTION
+     ========================================== */
+  const storyTargets = document.querySelectorAll('.story-content .story-headline');
+
+  storyTargets.forEach(target => {
+    // Preserve original text content without altering copy
+    const text = target.textContent.trim();
+    const words = text.split(/\s+/);
+    target.innerHTML = words.map((word, i) => {
+      return `<span class="word-mask"><span class="word-inner" style="transition-delay: ${i * 0.07}s">${word}</span></span>`;
+    }).join(' ');
+  });
+
+  const storyObserverOptions = {
+    root: null,
+    threshold: 0.2
+  };
+
+  let storyHeadingRevealed = false;
+  const revealStoryHeading = () => {
+    if (storyHeadingRevealed) return;
+
+    const isVisible = Array.from(storyTargets).some(target => {
+      const rect = target.getBoundingClientRect();
+      return rect.top < window.innerHeight * 0.8 && rect.bottom > window.innerHeight * 0.2;
+    });
+
+    if (isVisible) {
+      storyHeadingRevealed = true;
+      storyTargets.forEach(target => target.classList.add('in-view'));
+      window.removeEventListener('scroll', revealStoryHeading);
+      window.removeEventListener('resize', revealStoryHeading);
+    }
+  };
+
+  const storyObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        revealStoryHeading();
+        // Trigger ONCE per page load
+        observer.unobserve(entry.target);
+      }
+    });
+  }, storyObserverOptions);
+
+  storyTargets.forEach(target => storyObserver.observe(target));
+  window.addEventListener('scroll', revealStoryHeading, { passive: true });
+  window.addEventListener('resize', revealStoryHeading, { passive: true });
+  revealStoryHeading();
 
   /* ==========================================
      NUMBER COUNTER ANIMATION FOR STATS DIFFERENCE (INTERSECTION OBSERVER DRIVEN)
@@ -1778,6 +1829,9 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
       if (tag === 'svg' || tag === 'path' || tag === 'ul' || tag === 'li' || tag === 'ol' || tag === 'br') {
+        return;
+      }
+      if (typeof cls === 'string' && (cls.includes('story-eyebrow') || cls.includes('story-headline') || cls.includes('story-desc') || cls.includes('word-mask') || cls.includes('word-inner'))) {
         return;
       }
 
